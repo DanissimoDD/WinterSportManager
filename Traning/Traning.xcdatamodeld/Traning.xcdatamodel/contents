@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AcquredAbilitiesEntity" representedClassName="AcquredAbilitiesEntity" syncable="YES">
+        <attribute name="experience" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="stamina" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="strength" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="technik" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="athlete" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AthleteEntity" inverseName="acquredAbil" inverseEntity="AthleteEntity"/>
+    </entity>
+    <entity name="AthleteEntity" representedClassName="AthleteEntity" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="overall" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="acquredAbil" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AcquredAbilitiesEntity" inverseName="athlete" inverseEntity="AcquredAbilitiesEntity"/>
+        <relationship name="bio" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BioEntity" inverseName="atlethe" inverseEntity="BioEntity"/>
+        <relationship name="condition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SportConditionEntity" inverseName="athlete" inverseEntity="SportConditionEntity"/>
+        <relationship name="naturalAbil" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NaturalAbilitiesEntity" inverseName="athlete" inverseEntity="NaturalAbilitiesEntity"/>
+    </entity>
+    <entity name="BioEntity" representedClassName="BioEntity" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="nationality" optional="YES" attributeType="String"/>
+        <attribute name="sourname" optional="YES" attributeType="String"/>
+        <relationship name="atlethe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AthleteEntity" inverseName="bio" inverseEntity="AthleteEntity"/>
+    </entity>
+    <entity name="NaturalAbilitiesEntity" representedClassName="NaturalAbilitiesEntity" syncable="YES">
+        <attribute name="hardWork" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="talent" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="athlete" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AthleteEntity" inverseName="naturalAbil" inverseEntity="AthleteEntity"/>
+    </entity>
+    <entity name="SportConditionEntity" representedClassName="SportConditionEntity" syncable="YES">
+        <attribute name="breath" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="health" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="mental" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="physical" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="athlete" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AthleteEntity" inverseName="condition" inverseEntity="AthleteEntity"/>
+    </entity>
+    <entity name="TrailEntity" representedClassName="TrailEntity" syncable="YES" codeGenerationType="class"/>
+    <entity name="TrainingEntity" representedClassName="TrainingEntity" syncable="YES" codeGenerationType="class"/>
+</model>

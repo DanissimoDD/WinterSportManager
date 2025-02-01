@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9807F8CD2D4BF8B900FF5C94 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9807F8CC2D4BF8B900FF5C94 /* DataManager.swift */; };
+		986448EE2D44E75200BE9CA3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986448ED2D44E75200BE9CA3 /* MainView.swift */; };
+		986448F12D44EBF700BE9CA3 /* AthletBiosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986448F02D44EBF700BE9CA3 /* AthletBiosView.swift */; };
+		98993D342D4D80F000B56D17 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98993D332D4D80F000B56D17 /* UserDefaultsManager.swift */; };
+		98993D362D4EC80900B56D17 /* AthleteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98993D352D4EC80900B56D17 /* AthleteImageView.swift */; };
+		98AD01B92D41761900F65B2E /* TraningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AD01B82D41761900F65B2E /* TraningApp.swift */; };
+		98AD01BB2D41761900F65B2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AD01BA2D41761900F65B2E /* ContentView.swift */; };
+		98AD01BD2D41761A00F65B2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98AD01BC2D41761A00F65B2E /* Assets.xcassets */; };
+		98AD01C02D41761A00F65B2E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98AD01BF2D41761A00F65B2E /* Preview Assets.xcassets */; };
+		98AD01C22D41761A00F65B2E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AD01C12D41761A00F65B2E /* Persistence.swift */; };
+		98AD01C52D41761A00F65B2E /* Traning.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98AD01C32D41761A00F65B2E /* Traning.xcdatamodeld */; };
+		98AD01CD2D4176BC00F65B2E /* AAInfographics in Frameworks */ = {isa = PBXBuildFile; productRef = 98AD01CC2D4176BC00F65B2E /* AAInfographics */; };
+		98AD01D02D41777900F65B2E /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AD01CF2D41777900F65B2E /* Athlete.swift */; };
+		98C48CA12D454B830090F753 /* Nationalities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C48CA02D454B830090F753 /* Nationalities.swift */; };
+		98C48CA42D46948E0090F753 /* TrailDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C48CA32D46948E0090F753 /* TrailDetailsView.swift */; };
+		98C48CA62D46D3DA0090F753 /* StatStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C48CA52D46D3DA0090F753 /* StatStack.swift */; };
+		98C5B8CB2D48218F0007E4A2 /* RectangleStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C5B8CA2D48218F0007E4A2 /* RectangleStatView.swift */; };
+		98CC21DD2D4D62A9001E7A41 /* NaturalAbilitiesEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CC21D32D4D62A9001E7A41 /* NaturalAbilitiesEntity+CoreDataClass.swift */; };
+		98CC21DF2D4D62A9001E7A41 /* SportConditionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CC21D52D4D62A9001E7A41 /* SportConditionEntity+CoreDataClass.swift */; };
+		98CC21E12D4D62A9001E7A41 /* AthleteEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CC21D72D4D62A9001E7A41 /* AthleteEntity+CoreDataClass.swift */; };
+		98CC21E32D4D62A9001E7A41 /* BioEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CC21D92D4D62A9001E7A41 /* BioEntity+CoreDataClass.swift */; };
+		98CC21E52D4D62A9001E7A41 /* AcquredAbilitiesEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CC21DB2D4D62A9001E7A41 /* AcquredAbilitiesEntity+CoreDataClass.swift */; };
+		98EDA6832D42ABA8002D3620 /* Trail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EDA6822D42ABA8002D3620 /* Trail.swift */; };
+		98EDA6852D42AE2E002D3620 /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EDA6842D42AE2E002D3620 /* Training.swift */; };
+		98EDA6882D42B0C1002D3620 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 98EDA6872D42B0C1002D3620 /* Moya */; };
+		98EDA68B2D42B881002D3620 /* SeasonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EDA68A2D42B881002D3620 /* SeasonView.swift */; };
+		98EDA6902D42BA02002D3620 /* SeasonTrailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EDA68F2D42BA02002D3620 /* SeasonTrailView.swift */; };
+		98EDA6932D42CA28002D3620 /* AthletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EDA6922D42CA28002D3620 /* AthletView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9807F8CC2D4BF8B900FF5C94 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		986448ED2D44E75200BE9CA3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		986448F02D44EBF700BE9CA3 /* AthletBiosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthletBiosView.swift; sourceTree = "<group>"; };
+		98993D332D4D80F000B56D17 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		98993D352D4EC80900B56D17 /* AthleteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteImageView.swift; sourceTree = "<group>"; };
+		98AD01B52D41761900F65B2E /* Traning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Traning.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		98AD01B82D41761900F65B2E /* TraningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraningApp.swift; sourceTree = "<group>"; };
+		98AD01BA2D41761900F65B2E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		98AD01BC2D41761A00F65B2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		98AD01BF2D41761A00F65B2E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		98AD01C12D41761A00F65B2E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		98AD01C42D41761A00F65B2E /* Traning.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Traning.xcdatamodel; sourceTree = "<group>"; };
+		98AD01CF2D41777900F65B2E /* Athlete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athlete.swift; sourceTree = "<group>"; };
+		98C48CA02D454B830090F753 /* Nationalities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nationalities.swift; sourceTree = "<group>"; };
+		98C48CA32D46948E0090F753 /* TrailDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailDetailsView.swift; sourceTree = "<group>"; };
+		98C48CA52D46D3DA0090F753 /* StatStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatStack.swift; sourceTree = "<group>"; };
+		98C5B8CA2D48218F0007E4A2 /* RectangleStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleStatView.swift; sourceTree = "<group>"; };
+		98CC21D32D4D62A9001E7A41 /* NaturalAbilitiesEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NaturalAbilitiesEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		98CC21D52D4D62A9001E7A41 /* SportConditionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SportConditionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		98CC21D72D4D62A9001E7A41 /* AthleteEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AthleteEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		98CC21D92D4D62A9001E7A41 /* BioEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BioEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		98CC21DB2D4D62A9001E7A41 /* AcquredAbilitiesEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AcquredAbilitiesEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		98EDA6822D42ABA8002D3620 /* Trail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trail.swift; sourceTree = "<group>"; };
+		98EDA6842D42AE2E002D3620 /* Training.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Training.swift; sourceTree = "<group>"; };
+		98EDA68A2D42B881002D3620 /* SeasonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonView.swift; sourceTree = "<group>"; };
+		98EDA68F2D42BA02002D3620 /* SeasonTrailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonTrailView.swift; sourceTree = "<group>"; };
+		98EDA6922D42CA28002D3620 /* AthletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthletView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		98AD01B22D41761900F65B2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98EDA6882D42B0C1002D3620 /* Moya in Frameworks */,
+				98AD01CD2D4176BC00F65B2E /* AAInfographics in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9807F8CB2D4BF8A700FF5C94 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				9807F8CC2D4BF8B900FF5C94 /* DataManager.swift */,
+				98CC21E72D4D62C2001E7A41 /* Entities */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		984C7C802D49439300DDFE00 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				984C7C812D49439E00DDFE00 /* Views */,
+				98993D332D4D80F000B56D17 /* UserDefaultsManager.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		984C7C812D49439E00DDFE00 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				98C5B8CA2D48218F0007E4A2 /* RectangleStatView.swift */,
+				98C48CA52D46D3DA0090F753 /* StatStack.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		984C7C822D49703B00DDFE00 /* TrailDetail */ = {
+			isa = PBXGroup;
+			children = (
+				98C48CA32D46948E0090F753 /* TrailDetailsView.swift */,
+			);
+			path = TrailDetail;
+			sourceTree = "<group>";
+		};
+		986448EF2D44EBD600BE9CA3 /* AthletBios */ = {
+			isa = PBXGroup;
+			children = (
+				986448F02D44EBF700BE9CA3 /* AthletBiosView.swift */,
+			);
+			path = AthletBios;
+			sourceTree = "<group>";
+		};
+		98AD01AC2D41761900F65B2E = {
+			isa = PBXGroup;
+			children = (
+				98AD01B72D41761900F65B2E /* Traning */,
+				98AD01B62D41761900F65B2E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		98AD01B62D41761900F65B2E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				98AD01B52D41761900F65B2E /* Traning.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		98AD01B72D41761900F65B2E /* Traning */ = {
+			isa = PBXGroup;
+			children = (
+				98AD01B82D41761900F65B2E /* TraningApp.swift */,
+				98AD01BA2D41761900F65B2E /* ContentView.swift */,
+				986448ED2D44E75200BE9CA3 /* MainView.swift */,
+				9807F8CB2D4BF8A700FF5C94 /* Persistence */,
+				984C7C802D49439300DDFE00 /* Common */,
+				98C48CA22D4694560090F753 /* Flows */,
+				98AD01CE2D41774400F65B2E /* Model */,
+				98AD01BC2D41761A00F65B2E /* Assets.xcassets */,
+				98AD01C12D41761A00F65B2E /* Persistence.swift */,
+				98AD01C32D41761A00F65B2E /* Traning.xcdatamodeld */,
+				98AD01BE2D41761A00F65B2E /* Preview Content */,
+			);
+			path = Traning;
+			sourceTree = "<group>";
+		};
+		98AD01BE2D41761A00F65B2E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				98AD01BF2D41761A00F65B2E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		98AD01CE2D41774400F65B2E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				98AD01CF2D41777900F65B2E /* Athlete.swift */,
+				98EDA6822D42ABA8002D3620 /* Trail.swift */,
+				98C48CA02D454B830090F753 /* Nationalities.swift */,
+				98EDA6842D42AE2E002D3620 /* Training.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		98C48CA22D4694560090F753 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				986448EF2D44EBD600BE9CA3 /* AthletBios */,
+				98EDA68C2D42B8C0002D3620 /* SeasonView */,
+				984C7C822D49703B00DDFE00 /* TrailDetail */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		98CC21E72D4D62C2001E7A41 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				98CC21D32D4D62A9001E7A41 /* NaturalAbilitiesEntity+CoreDataClass.swift */,
+				98CC21D52D4D62A9001E7A41 /* SportConditionEntity+CoreDataClass.swift */,
+				98CC21D72D4D62A9001E7A41 /* AthleteEntity+CoreDataClass.swift */,
+				98CC21D92D4D62A9001E7A41 /* BioEntity+CoreDataClass.swift */,
+				98CC21DB2D4D62A9001E7A41 /* AcquredAbilitiesEntity+CoreDataClass.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		98EDA68C2D42B8C0002D3620 /* SeasonView */ = {
+			isa = PBXGroup;
+			children = (
+				98EDA68A2D42B881002D3620 /* SeasonView.swift */,
+				98EDA68D2D42B9D3002D3620 /* View */,
+			);
+			path = SeasonView;
+			sourceTree = "<group>";
+		};
+		98EDA68D2D42B9D3002D3620 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				98EDA6912D42CA12002D3620 /* AthletView */,
+				98EDA68E2D42B9E3002D3620 /* TrailView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		98EDA68E2D42B9E3002D3620 /* TrailView */ = {
+			isa = PBXGroup;
+			children = (
+				98EDA68F2D42BA02002D3620 /* SeasonTrailView.swift */,
+			);
+			path = TrailView;
+			sourceTree = "<group>";
+		};
+		98EDA6912D42CA12002D3620 /* AthletView */ = {
+			isa = PBXGroup;
+			children = (
+				98EDA6922D42CA28002D3620 /* AthletView.swift */,
+				98993D352D4EC80900B56D17 /* AthleteImageView.swift */,
+			);
+			path = AthletView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		98AD01B42D41761900F65B2E /* Traning */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98AD01C82D41761A00F65B2E /* Build configuration list for PBXNativeTarget "Traning" */;
+			buildPhases = (
+				98AD01B12D41761900F65B2E /* Sources */,
+				98AD01B22D41761900F65B2E /* Frameworks */,
+				98AD01B32D41761900F65B2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Traning;
+			packageProductDependencies = (
+				98AD01CC2D4176BC00F65B2E /* AAInfographics */,
+				98EDA6872D42B0C1002D3620 /* Moya */,
+			);
+			productName = Traning;
+			productReference = 98AD01B52D41761900F65B2E /* Traning.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98AD01AD2D41761900F65B2E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					98AD01B42D41761900F65B2E = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 98AD01B02D41761900F65B2E /* Build configuration list for PBXProject "Traning" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 98AD01AC2D41761900F65B2E;
+			packageReferences = (
+				98AD01CB2D4176BC00F65B2E /* XCRemoteSwiftPackageReference "AAChartKit-Swift" */,
+				98EDA6862D42B0C1002D3620 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
+			productRefGroup = 98AD01B62D41761900F65B2E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				98AD01B42D41761900F65B2E /* Traning */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		98AD01B32D41761900F65B2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98AD01C02D41761A00F65B2E /* Preview Assets.xcassets in Resources */,
+				98AD01BD2D41761A00F65B2E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		98AD01B12D41761900F65B2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98EDA6852D42AE2E002D3620 /* Training.swift in Sources */,
+				98AD01D02D41777900F65B2E /* Athlete.swift in Sources */,
+				98EDA6902D42BA02002D3620 /* SeasonTrailView.swift in Sources */,
+				98AD01C22D41761A00F65B2E /* Persistence.swift in Sources */,
+				98C48CA62D46D3DA0090F753 /* StatStack.swift in Sources */,
+				98AD01BB2D41761900F65B2E /* ContentView.swift in Sources */,
+				98AD01B92D41761900F65B2E /* TraningApp.swift in Sources */,
+				98993D342D4D80F000B56D17 /* UserDefaultsManager.swift in Sources */,
+				98EDA6932D42CA28002D3620 /* AthletView.swift in Sources */,
+				986448EE2D44E75200BE9CA3 /* MainView.swift in Sources */,
+				9807F8CD2D4BF8B900FF5C94 /* DataManager.swift in Sources */,
+				98C48CA12D454B830090F753 /* Nationalities.swift in Sources */,
+				98EDA6832D42ABA8002D3620 /* Trail.swift in Sources */,
+				98AD01C52D41761A00F65B2E /* Traning.xcdatamodeld in Sources */,
+				986448F12D44EBF700BE9CA3 /* AthletBiosView.swift in Sources */,
+				98C48CA42D46948E0090F753 /* TrailDetailsView.swift in Sources */,
+				98C5B8CB2D48218F0007E4A2 /* RectangleStatView.swift in Sources */,
+				98CC21DD2D4D62A9001E7A41 /* NaturalAbilitiesEntity+CoreDataClass.swift in Sources */,
+				98CC21DF2D4D62A9001E7A41 /* SportConditionEntity+CoreDataClass.swift in Sources */,
+				98CC21E12D4D62A9001E7A41 /* AthleteEntity+CoreDataClass.swift in Sources */,
+				98CC21E32D4D62A9001E7A41 /* BioEntity+CoreDataClass.swift in Sources */,
+				98CC21E52D4D62A9001E7A41 /* AcquredAbilitiesEntity+CoreDataClass.swift in Sources */,
+				98993D362D4EC80900B56D17 /* AthleteImageView.swift in Sources */,
+				98EDA68B2D42B881002D3620 /* SeasonView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		98AD01C62D41761A00F65B2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		98AD01C72D41761A00F65B2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		98AD01C92D41761A00F65B2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Traning/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DanilIncorporated.Traning;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		98AD01CA2D41761A00F65B2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Traning/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DanilIncorporated.Traning;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		98AD01B02D41761900F65B2E /* Build configuration list for PBXProject "Traning" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98AD01C62D41761A00F65B2E /* Debug */,
+				98AD01C72D41761A00F65B2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98AD01C82D41761A00F65B2E /* Build configuration list for PBXNativeTarget "Traning" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98AD01C92D41761A00F65B2E /* Debug */,
+				98AD01CA2D41761A00F65B2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		98AD01CB2D4176BC00F65B2E /* XCRemoteSwiftPackageReference "AAChartKit-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AAChartModel/AAChartKit-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.0;
+			};
+		};
+		98EDA6862D42B0C1002D3620 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		98AD01CC2D4176BC00F65B2E /* AAInfographics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98AD01CB2D4176BC00F65B2E /* XCRemoteSwiftPackageReference "AAChartKit-Swift" */;
+			productName = AAInfographics;
+		};
+		98EDA6872D42B0C1002D3620 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98EDA6862D42B0C1002D3620 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		98AD01C32D41761A00F65B2E /* Traning.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				98AD01C42D41761A00F65B2E /* Traning.xcdatamodel */,
+			);
+			currentVersion = 98AD01C42D41761A00F65B2E /* Traning.xcdatamodel */;
+			path = Traning.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 98AD01AD2D41761900F65B2E /* Project object */;
+}
