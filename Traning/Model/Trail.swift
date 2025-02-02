@@ -8,22 +8,24 @@
 import Foundation
 import SwiftUI
 
-struct Trail: Identifiable {
+struct Trail: Identifiable, Hashable {
+	
 	let id: UUID = UUID()
 	var name: String
 	let distance: TrailDistance
 	let height: TrailHeight
-	
+	var route: [RoutePart]
+
 	var image: Image {
 		Image("\(name)Image")
 	}
 }
 
-enum TrailDistance {
+enum TrailDistance: Hashable {
 	case short
 	case medium
 	case long
-	
+
 	var description: String {
 		switch self {
 		case .short:
@@ -34,9 +36,20 @@ enum TrailDistance {
 			"ДЛИННАЯ"
 		}
 	}
+	
+	var efficiency: Double {
+		switch self {
+		case .short:
+			0.8
+		case .medium:
+			1.6
+		case .long:
+			2.4
+		}
+	}
 }
 
-enum TrailHeight {
+enum TrailHeight: Hashable {
 	case low
 	case medium
 	case high
@@ -49,6 +62,18 @@ enum TrailHeight {
 			"СРЕДНЕГОРЬЕ"
 		case .high:
 			"ВЫСОКОГОРЬЕ"
+		}
+	}
+	
+	
+	var efficiency: Double {
+		switch self {
+		case .low:
+			0.8
+		case .medium:
+			1.6
+		case .high:
+			2.4
 		}
 	}
 }
@@ -66,22 +91,95 @@ enum TrailCases: CaseIterable {
 	var details: Trail {
 		switch self {
 		case .Andorra:
-			Trail(name: "Andorra", distance: .medium, height: .low)
+			Trail(
+				name: "Andorra",
+				distance: .medium,
+				height: .low,
+				route: [
+					RoutePart(type: .flat, distance: 110),
+					RoutePart(type: .ascent(scale: 1.2), distance: 85), // 1950
+					RoutePart(type: .descent(scale: 1.1), distance: 55), // 2500
+					RoutePart(type: .ascent(scale: 1.5), distance: 50), // 3000
+					RoutePart(type: .flat, distance: 100), // 4000
+					RoutePart(type: .descent(scale: 1.2), distance: 80), // 4800
+					RoutePart(type: .flat, distance: 110) // 5900
+				]
+			)
 		case .Croatia:
-			Trail(name: "Croatia", distance: .short, height: .medium)
+			Trail(
+				name: "Croatia",
+				distance: .short,
+				height: .medium,
+				route: [
+					RoutePart(type: .flat, distance: 1800),
+					RoutePart(type: .ascent(scale: 1.3), distance: 1300), // 3100
+					RoutePart(type: .flat, distance: 800), // 3900
+					RoutePart(type: .ascent(scale: 1.2), distance: 900), // 4800
+					RoutePart(type: .descent(scale: 1.6), distance: 1000), // 5800
+					RoutePart(type: .flat, distance: 500) // 6300
+				]
+			)
 		case .Norway:
-			Trail(name: "Norway", distance: .medium, height: .medium)
+			Trail(
+				name: "Norway",
+				distance: .medium,
+				height: .medium,
+				route: [
+					RoutePart(type: .flat, distance: 0.7),
+					RoutePart(type: .ascent(scale: 1.5), distance: 0.3),
+					RoutePart(type: .flat, distance: 0.6),
+					RoutePart(type: .ascent(scale: 1.1), distance: 0.7),
+					RoutePart(type: .descent(scale: 1.6), distance: 0.4),
+					RoutePart(type: .flat, distance: 0.3)
+				]
+			)
 		case .Italy:
-			Trail(name: "Italy", distance: .short, height: .high)
+			Trail(
+				name: "Italy",
+				distance: .short,
+				height: .high,
+				route: [
+					RoutePart(type: .flat, distance: 0.5),
+					RoutePart(type: .descent(scale: 1.2), distance: 0.4),
+					RoutePart(type: .ascent(scale: 1.3), distance: 0.3),
+					RoutePart(type: .flat, distance: 0.4),
+					RoutePart(type: .ascent(scale: 1.1), distance: 0.7),
+					RoutePart(type: .flat, distance: 0.3)
+				]
+			)
 		case .France:
-			Trail(name: "France", distance: .long, height: .medium)
+			Trail(
+				name: "France",
+				distance: .long,
+				height: .medium,
+				route: [
+					RoutePart(type: .flat, distance: 0.3),
+					RoutePart(type: .descent(scale: 1.3), distance: 0.8),
+					RoutePart(type: .ascent(scale: 1.1), distance: 0.6),
+					RoutePart(type: .flat, distance: 0.9),
+					RoutePart(type: .ascent(scale: 1.2), distance: 0.6),
+					RoutePart(type: .descent(scale: 1.1), distance: 0.8),
+					RoutePart(type: .flat, distance: 0.8)
+				]
+			)
 		case .Estonia:
-			Trail(name: "Estonia", distance: .short, height: .low)
+			Trail(name: "Estonia", distance: .short, height: .low, route: [])
 		case .Germany:
-			Trail(name: "Germany", distance: .medium, height: .medium)
+			Trail(name: "Germany", distance: .medium, height: .medium, route: [])
 		case .Hungary:
-			Trail(name: "Hungary", distance: .long, height: .low)
+			Trail(name: "Hungary", distance: .long, height: .low, route: [])
 		}
 	}
 }
 
+struct RoutePart: Hashable, Identifiable {
+	let id = UUID()
+	let type: Terrain
+	let distance: Double
+}
+
+enum Terrain: Hashable {
+	case ascent(scale: Double)
+	case flat
+	case descent(scale: Double)
+}

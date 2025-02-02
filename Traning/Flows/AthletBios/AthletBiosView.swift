@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AthletBiosView: View {
 	
-	@Binding var athlete: Athlete
+	let athlete: Athlete
 	
 	var body: some View {
 		VStack(alignment: .leading) {
@@ -23,7 +23,7 @@ struct AthletBiosView: View {
 						athlete.bio.nationality.flagImage.resizable().frame(width: 18, height: 18).cornerRadius(4)
 					}
 					ZStack {
-						RectangleStatView(stat: $athlete.overall)
+						RectangleStatView(stat: athlete.overall)
 					}
 				}
 			}
@@ -32,24 +32,24 @@ struct AthletBiosView: View {
 			Spacer()
 			List {
 				Section {
-					StatStack(title: "Technik: ", stat: $athlete.acquiredAbilities.technik)
-					StatStack(title: "Experience: ", stat: $athlete.acquiredAbilities.experience)
-					StatStack(title: "Strength: ", stat: $athlete.acquiredAbilities.strength)
-					StatStack(title: "Stamina: ", stat: $athlete.acquiredAbilities.stamina)
+					StatStack(title: "Technik: ", stat: athlete.acquiredAbilities.technik)
+					StatStack(title: "Experience: ", stat: athlete.acquiredAbilities.experience)
+					StatStack(title: "Strength: ", stat: athlete.acquiredAbilities.strength)
+					StatStack(title: "Stamina: ", stat: athlete.acquiredAbilities.stamina)
 				} header: {
 					Text("Acquired abilities")
 				}
 				Section {
-					StatStack(title: "Physical: ", stat: $athlete.condition.physical)
-					StatStack(title: "Breath: ", stat: $athlete.condition.breath)
+					StatStack(title: "Physical: ", stat: athlete.condition.physical)
+					StatStack(title: "Breath: ", stat: athlete.condition.breath)
 //					StatStack(title: "Mental: ", stat: $athlete.condition.mental)
-					StatStack(title: "Health: ", stat: $athlete.condition.health)
+					StatStack(title: "Health: ", stat: athlete.condition.health)
 				} header: {
 					Text("Sport condition")
 				}
 				Section {
-					StatStack(title: "Talent: ", stat: $athlete.naturalAbilities.talent)
-					StatStack(title: "Hard work: ", stat: $athlete.naturalAbilities.hardWork)
+					StatStack(title: "Talent: ", stat: athlete.naturalAbilities.talent)
+					StatStack(title: "Hard work: ", stat: athlete.naturalAbilities.hardWork)
 					//				StatStack(title: "Steadfastness: ", stat: $athlete.naturalAbilities.steadfastness)
 				} header: {
 					Text("Natural abilities")

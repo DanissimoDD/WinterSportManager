@@ -11,12 +11,10 @@ import SwiftUI
 struct TraningApp: App {
 	// Создаем менеджеры
  private let userDefaultsManager = UserDefaultsManager()
- private let dataManager: DataManager
+ private let dataManager: DataStorageManager
 
  init() {
-	 // Инициализируем DataManager
-	 self.dataManager = DataManager(defaults: userDefaultsManager)
-	 // Создаем атлетов, если нужно
+	 self.dataManager = DataStorageManager(defaults: userDefaultsManager)
 	 self.dataManager.createInitialAthletesIfNeeded()
  }
 	

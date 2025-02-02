@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RectangleStatView: View {
 
-	@Binding var stat: Double
+	let stat: Double
 
 	var body: some View {
 		Text("\(Int(stat * 100))")

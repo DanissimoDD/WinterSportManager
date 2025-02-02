@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct AthletView: View {
+struct AthleteBioRow: View {
 	
-	@Binding var bio: Bio
+	var bio: Bio
 	
 	var body: some View {
 		HStack {
-			AthleteImageView(bio: $bio)
+			AthleteImageView(bio: bio)
 			Text("\(bio.sourname), \(bio.name)").font(.system(size: 18, weight: .regular))
 		}
 	}

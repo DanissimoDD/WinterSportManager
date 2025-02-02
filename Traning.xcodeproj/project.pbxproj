@@ -7,12 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9807F8CD2D4BF8B900FF5C94 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9807F8CC2D4BF8B900FF5C94 /* DataManager.swift */; };
+		9807F8CD2D4BF8B900FF5C94 /* DataStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9807F8CC2D4BF8B900FF5C94 /* DataStorageManager.swift */; };
+		9817ACD12D858D0A00E883AA /* TrailDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9817ACD02D858D0A00E883AA /* TrailDetailViewModel.swift */; };
+		9817ACD32D89F19700E883AA /* AthletsStandings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9817ACD22D89F19700E883AA /* AthletsStandings.swift */; };
+		9817ACD52D89FEC700E883AA /* SkiSliding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9817ACD42D89FEC700E883AA /* SkiSliding.swift */; };
 		98419F8F2D4F949B00B4560B /* TrailStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98419F8E2D4F949B00B4560B /* TrailStatusView.swift */; };
+		98419F922D58F51900B4560B /* RaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98419F912D58F51900B4560B /* RaceView.swift */; };
+		98419F942D67B9BF00B4560B /* Athlete+Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98419F932D67B9BF00B4560B /* Athlete+Race.swift */; };
+		98419F972D69C71C00B4560B /* RaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98419F962D69C71C00B4560B /* RaceViewModel.swift */; };
 		986448EE2D44E75200BE9CA3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986448ED2D44E75200BE9CA3 /* MainView.swift */; };
 		986448F12D44EBF700BE9CA3 /* AthletBiosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986448F02D44EBF700BE9CA3 /* AthletBiosView.swift */; };
 		98993D342D4D80F000B56D17 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98993D332D4D80F000B56D17 /* UserDefaultsManager.swift */; };
 		98993D362D4EC80900B56D17 /* AthleteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98993D352D4EC80900B56D17 /* AthleteImageView.swift */; };
+		98999A082D7785320068F008 /* AthleteTiming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98999A072D7785320068F008 /* AthleteTiming.swift */; };
+		98999A0A2D7A171D0068F008 /* AthleteRaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98999A092D7A171D0068F008 /* AthleteRaceRow.swift */; };
+		98999A0C2D7F603A0068F008 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98999A0B2D7F603A0068F008 /* TimeFormatter.swift */; };
+		98999A0E2D7F61700068F008 /* RaceTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98999A0D2D7F61700068F008 /* RaceTimeView.swift */; };
 		98AD01B92D41761900F65B2E /* TraningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AD01B82D41761900F65B2E /* TraningApp.swift */; };
 		98AD01BB2D41761900F65B2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AD01BA2D41761900F65B2E /* ContentView.swift */; };
 		98AD01BD2D41761A00F65B2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98AD01BC2D41761A00F65B2E /* Assets.xcassets */; };
@@ -35,16 +45,26 @@
 		98EDA6882D42B0C1002D3620 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 98EDA6872D42B0C1002D3620 /* Moya */; };
 		98EDA68B2D42B881002D3620 /* SeasonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EDA68A2D42B881002D3620 /* SeasonView.swift */; };
 		98EDA6902D42BA02002D3620 /* SeasonTrailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EDA68F2D42BA02002D3620 /* SeasonTrailView.swift */; };
-		98EDA6932D42CA28002D3620 /* AthletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EDA6922D42CA28002D3620 /* AthletView.swift */; };
+		98EDA6932D42CA28002D3620 /* AthleteBioRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EDA6922D42CA28002D3620 /* AthleteBioRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9807F8CC2D4BF8B900FF5C94 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		9807F8CC2D4BF8B900FF5C94 /* DataStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageManager.swift; sourceTree = "<group>"; };
+		9817ACD02D858D0A00E883AA /* TrailDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailDetailViewModel.swift; sourceTree = "<group>"; };
+		9817ACD22D89F19700E883AA /* AthletsStandings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthletsStandings.swift; sourceTree = "<group>"; };
+		9817ACD42D89FEC700E883AA /* SkiSliding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiSliding.swift; sourceTree = "<group>"; };
 		98419F8E2D4F949B00B4560B /* TrailStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailStatusView.swift; sourceTree = "<group>"; };
+		98419F912D58F51900B4560B /* RaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceView.swift; sourceTree = "<group>"; };
+		98419F932D67B9BF00B4560B /* Athlete+Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Athlete+Race.swift"; sourceTree = "<group>"; };
+		98419F962D69C71C00B4560B /* RaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceViewModel.swift; sourceTree = "<group>"; };
 		986448ED2D44E75200BE9CA3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		986448F02D44EBF700BE9CA3 /* AthletBiosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthletBiosView.swift; sourceTree = "<group>"; };
 		98993D332D4D80F000B56D17 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		98993D352D4EC80900B56D17 /* AthleteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteImageView.swift; sourceTree = "<group>"; };
+		98999A072D7785320068F008 /* AthleteTiming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteTiming.swift; sourceTree = "<group>"; };
+		98999A092D7A171D0068F008 /* AthleteRaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteRaceRow.swift; sourceTree = "<group>"; };
+		98999A0B2D7F603A0068F008 /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
+		98999A0D2D7F61700068F008 /* RaceTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceTimeView.swift; sourceTree = "<group>"; };
 		98AD01B52D41761900F65B2E /* Traning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Traning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98AD01B82D41761900F65B2E /* TraningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraningApp.swift; sourceTree = "<group>"; };
 		98AD01BA2D41761900F65B2E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,7 +86,7 @@
 		98EDA6842D42AE2E002D3620 /* Training.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Training.swift; sourceTree = "<group>"; };
 		98EDA68A2D42B881002D3620 /* SeasonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonView.swift; sourceTree = "<group>"; };
 		98EDA68F2D42BA02002D3620 /* SeasonTrailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonTrailView.swift; sourceTree = "<group>"; };
-		98EDA6922D42CA28002D3620 /* AthletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthletView.swift; sourceTree = "<group>"; };
+		98EDA6922D42CA28002D3620 /* AthleteBioRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteBioRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +105,7 @@
 		9807F8CB2D4BF8A700FF5C94 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				9807F8CC2D4BF8B900FF5C94 /* DataManager.swift */,
+				9807F8CC2D4BF8B900FF5C94 /* DataStorageManager.swift */,
 				98CC21E72D4D62C2001E7A41 /* Entities */,
 			);
 			path = Persistence;
@@ -99,11 +119,29 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		98419F902D58F50500B4560B /* RaceView */ = {
+			isa = PBXGroup;
+			children = (
+				98419F912D58F51900B4560B /* RaceView.swift */,
+				98419F952D69C6FF00B4560B /* ViewModel */,
+			);
+			path = RaceView;
+			sourceTree = "<group>";
+		};
+		98419F952D69C6FF00B4560B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				98419F962D69C71C00B4560B /* RaceViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		984C7C802D49439300DDFE00 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				984C7C812D49439E00DDFE00 /* Views */,
 				98993D332D4D80F000B56D17 /* UserDefaultsManager.swift */,
+				98999A0B2D7F603A0068F008 /* TimeFormatter.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -113,7 +151,10 @@
 			children = (
 				98C5B8CA2D48218F0007E4A2 /* RectangleStatView.swift */,
 				98C48CA52D46D3DA0090F753 /* StatStack.swift */,
-				98EDA6922D42CA28002D3620 /* AthletView.swift */,
+				98999A0D2D7F61700068F008 /* RaceTimeView.swift */,
+				9817ACD22D89F19700E883AA /* AthletsStandings.swift */,
+				98999A092D7A171D0068F008 /* AthleteRaceRow.swift */,
+				98EDA6922D42CA28002D3620 /* AthleteBioRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -122,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				98C48CA32D46948E0090F753 /* TrailDetailsView.swift */,
+				9817ACD02D858D0A00E883AA /* TrailDetailViewModel.swift */,
 				98419F8D2D4F948400B4560B /* View */,
 			);
 			path = TrailDetail;
@@ -183,7 +225,10 @@
 				98AD01CF2D41777900F65B2E /* Athlete.swift */,
 				98EDA6822D42ABA8002D3620 /* Trail.swift */,
 				98C48CA02D454B830090F753 /* Nationalities.swift */,
+				9817ACD42D89FEC700E883AA /* SkiSliding.swift */,
 				98EDA6842D42AE2E002D3620 /* Training.swift */,
+				98419F932D67B9BF00B4560B /* Athlete+Race.swift */,
+				98999A072D7785320068F008 /* AthleteTiming.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,6 +236,7 @@
 		98C48CA22D4694560090F753 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				98419F902D58F50500B4560B /* RaceView */,
 				986448EF2D44EBD600BE9CA3 /* AthletBios */,
 				98EDA68C2D42B8C0002D3620 /* SeasonView */,
 				984C7C822D49703B00DDFE00 /* TrailDetail */,
@@ -323,6 +369,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				98EDA6852D42AE2E002D3620 /* Training.swift in Sources */,
+				9817ACD52D89FEC700E883AA /* SkiSliding.swift in Sources */,
+				98999A0C2D7F603A0068F008 /* TimeFormatter.swift in Sources */,
 				98419F8F2D4F949B00B4560B /* TrailStatusView.swift in Sources */,
 				98AD01D02D41777900F65B2E /* Athlete.swift in Sources */,
 				98EDA6902D42BA02002D3620 /* SeasonTrailView.swift in Sources */,
@@ -331,22 +379,30 @@
 				98AD01BB2D41761900F65B2E /* ContentView.swift in Sources */,
 				98AD01B92D41761900F65B2E /* TraningApp.swift in Sources */,
 				98993D342D4D80F000B56D17 /* UserDefaultsManager.swift in Sources */,
-				98EDA6932D42CA28002D3620 /* AthletView.swift in Sources */,
+				98EDA6932D42CA28002D3620 /* AthleteBioRow.swift in Sources */,
 				986448EE2D44E75200BE9CA3 /* MainView.swift in Sources */,
-				9807F8CD2D4BF8B900FF5C94 /* DataManager.swift in Sources */,
+				9807F8CD2D4BF8B900FF5C94 /* DataStorageManager.swift in Sources */,
+				9817ACD32D89F19700E883AA /* AthletsStandings.swift in Sources */,
+				9817ACD12D858D0A00E883AA /* TrailDetailViewModel.swift in Sources */,
 				98C48CA12D454B830090F753 /* Nationalities.swift in Sources */,
+				98999A0A2D7A171D0068F008 /* AthleteRaceRow.swift in Sources */,
 				98EDA6832D42ABA8002D3620 /* Trail.swift in Sources */,
 				98AD01C52D41761A00F65B2E /* Traning.xcdatamodeld in Sources */,
 				986448F12D44EBF700BE9CA3 /* AthletBiosView.swift in Sources */,
+				98999A0E2D7F61700068F008 /* RaceTimeView.swift in Sources */,
 				98C48CA42D46948E0090F753 /* TrailDetailsView.swift in Sources */,
+				98419F972D69C71C00B4560B /* RaceViewModel.swift in Sources */,
 				98C5B8CB2D48218F0007E4A2 /* RectangleStatView.swift in Sources */,
 				98CC21DD2D4D62A9001E7A41 /* NaturalAbilitiesEntity+CoreDataClass.swift in Sources */,
 				98CC21DF2D4D62A9001E7A41 /* SportConditionEntity+CoreDataClass.swift in Sources */,
 				98CC21E12D4D62A9001E7A41 /* AthleteEntity+CoreDataClass.swift in Sources */,
 				98CC21E32D4D62A9001E7A41 /* BioEntity+CoreDataClass.swift in Sources */,
+				98999A082D7785320068F008 /* AthleteTiming.swift in Sources */,
+				98419F942D67B9BF00B4560B /* Athlete+Race.swift in Sources */,
 				98CC21E52D4D62A9001E7A41 /* AcquredAbilitiesEntity+CoreDataClass.swift in Sources */,
 				98993D362D4EC80900B56D17 /* AthleteImageView.swift in Sources */,
 				98EDA68B2D42B881002D3620 /* SeasonView.swift in Sources */,
+				98419F922D58F51900B4560B /* RaceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-final class DataManager: ObservableObject {
+final class DataStorageManager: ObservableObject {
 	
 	private let userDefaultsManager: UserDefaultsManager
 	
@@ -81,7 +81,7 @@ final class DataManager: ObservableObject {
 	}
 }
 
-extension DataManager {
+extension DataStorageManager {
 	// Метод для создания атлетов, если они еще не созданы
 	func createInitialAthletesIfNeeded() {
 		guard !userDefaultsManager.areAthletesCreated else {
@@ -166,17 +166,6 @@ extension AcquredAbilitiesEntity {
 		self.stamina = model.stamina
 		self.strength = model.strength
 		self.experience = model.experience
-	}
-}
-
-extension Athlete {
-	init(entity: AthleteEntity) {
-		self.id = entity.id ?? UUID()
-		self.overall = entity.overall
-		self.bio = Bio(entity: entity.bio!)
-		self.condition = SportCondition(entity: entity.condition!)
-		self.naturalAbilities = NaturalAbilities(entity: entity.naturalAbil!)
-		self.acquiredAbilities = AcquiredAbilities(entity: entity.acquredAbil!)
 	}
 }
 

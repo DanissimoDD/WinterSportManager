@@ -11,7 +11,7 @@ struct StatStack: View {
 	
 	let title: String
 	
-	@Binding var stat: Double
+	let stat: Double
 	
 	var statColor: Color {
 		switch stat {

@@ -15,8 +15,11 @@ struct SeasonView: View {
 	
 	@State var active: Bool = true
 	
+	
+	@State var navigationPath = NavigationPath() // Для NavigationStack
+	
 	var body: some View {
-		NavigationView {
+		NavigationStack(path: $navigationPath) {
 			VStack {// Заголовок "Trails"
 				Text("Trails")
 					.font(Font.system(size: 18, weight: .heavy))
@@ -26,13 +29,11 @@ struct SeasonView: View {
 				ScrollView(.horizontal, showsIndicators: false) {
 					HStack(spacing: 15) {
 						ForEach($trails) { trail in
-							NavigationLink {
-								TrailDetailsView(trail: trail, athlets: $athlets)
-							} label: {
+							NavigationLink(value: trail.wrappedValue) {
 								SeasonTrailView(title: trail.name)
 									.shadow(color: .black.opacity(0.2), radius: 5, x: 2, y: 2)
-									.scaleEffect(active ? 1.0 : 0.55) // Анимация масштаба
-									.animation(.easeInOut(duration: 0.2), value: active) // Анимация
+									.scaleEffect(active ? 1.0 : 0.55)
+									.animation(.easeInOut(duration: 0.2), value: active)
 							}
 						}
 					}
@@ -44,11 +45,9 @@ struct SeasonView: View {
 				.padding(.horizontal, 10) // Отступы по бокам
 				List {
 					Section {
-						ForEach($athlets) { athlet in
-							NavigationLink {
-								AthletBiosView(athlete: athlet)
-							} label: {
-								AthletView(bio: athlet.bio)
+						ForEach(athlets) { athlet in
+							NavigationLink(value: athlet) {
+								AthleteBioRow(bio: athlet.bio)
 							}
 						}
 					}
@@ -62,10 +61,17 @@ struct SeasonView: View {
 			}
 			.navigationTitle("Season 2024")
 			.navigationBarTitleDisplayMode(.inline)
-			.toolbarBackground(.teal.opacity(0.3), for: .navigationBar) // Устанавливаем цвет фона навигационного бара
-			.toolbarBackground(.visible, for: .navigationBar) // Делаем фон видимым
+			.toolbarBackground(.teal.opacity(0.3), for: .navigationBar)
+			.toolbarBackground(.visible, for: .navigationBar)
 			.containerRelativeFrame([.horizontal, .vertical])
 			.background(Gradient(colors: [.teal, .cyan, .green]).opacity(0.2))
+			// Добавлено: navigationDestination для Trail
+			.navigationDestination(for: Trail.self) { trail in
+				TrailDetailsView(trail: trail, athlets: athlets, navigationPath: $navigationPath)
+			}
+
+			// Добавлено: navigationDestination для Athlete
+			.navigationDestination(for: Athlete.self) { AthletBiosView(athlete: $0) }
 		}
 	}
 }

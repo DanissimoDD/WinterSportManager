@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-	@EnvironmentObject private var dataManager: DataManager
+	@EnvironmentObject private var dataManager: DataStorageManager
 	@State private var athletes: [Athlete] = []
 	
 	var body: some View {

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AthleteImageView: View {
 	
-	@Binding var bio: Bio
+	var bio: Bio
 	
 	var body: some View {
 		ZStack {
