@@ -15,7 +15,6 @@ struct AthletView: View {
 		HStack {
 			AthleteImageView(bio: $bio)
 			Text("\(bio.sourname), \(bio.name)").font(.system(size: 18, weight: .regular))
-				.background(.clear)
 		}
 	}
 }

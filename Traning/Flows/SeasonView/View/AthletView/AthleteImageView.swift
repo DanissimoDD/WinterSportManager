@@ -17,6 +17,7 @@ struct AthleteImageView: View {
 				.resizable()
 				.frame(width: 48, height: 48)
 				.cornerRadius(8)
+				.padding(.trailing, 2)
 			VStack {
 				Spacer()
 				HStack(alignment: .bottom) {
@@ -29,7 +30,7 @@ struct AthleteImageView: View {
 						.font(.system(size: 12, weight: .semibold)) // Шрифт
 						.foregroundColor(.black) // Цвет текста
 						.padding(3) // Отступы внутри кружка
-						.background(Circle().fill(Color.white)) // Круг с заливкой
+						.background(Circle().fill(Color.white))
 						.overlay(Circle().stroke(Color.blue, lineWidth: 1))
 				}.padding(.bottom, 2)
 			}

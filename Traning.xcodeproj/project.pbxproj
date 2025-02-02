@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9807F8CD2D4BF8B900FF5C94 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9807F8CC2D4BF8B900FF5C94 /* DataManager.swift */; };
+		98419F8F2D4F949B00B4560B /* TrailStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98419F8E2D4F949B00B4560B /* TrailStatusView.swift */; };
 		986448EE2D44E75200BE9CA3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986448ED2D44E75200BE9CA3 /* MainView.swift */; };
 		986448F12D44EBF700BE9CA3 /* AthletBiosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986448F02D44EBF700BE9CA3 /* AthletBiosView.swift */; };
 		98993D342D4D80F000B56D17 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98993D332D4D80F000B56D17 /* UserDefaultsManager.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		9807F8CC2D4BF8B900FF5C94 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		98419F8E2D4F949B00B4560B /* TrailStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailStatusView.swift; sourceTree = "<group>"; };
 		986448ED2D44E75200BE9CA3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		986448F02D44EBF700BE9CA3 /* AthletBiosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthletBiosView.swift; sourceTree = "<group>"; };
 		98993D332D4D80F000B56D17 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
+		98419F8D2D4F948400B4560B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				98419F8E2D4F949B00B4560B /* TrailStatusView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		984C7C802D49439300DDFE00 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +113,7 @@
 			children = (
 				98C5B8CA2D48218F0007E4A2 /* RectangleStatView.swift */,
 				98C48CA52D46D3DA0090F753 /* StatStack.swift */,
+				98EDA6922D42CA28002D3620 /* AthletView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -111,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				98C48CA32D46948E0090F753 /* TrailDetailsView.swift */,
+				98419F8D2D4F948400B4560B /* View */,
 			);
 			path = TrailDetail;
 			sourceTree = "<group>";
@@ -227,7 +239,6 @@
 		98EDA6912D42CA12002D3620 /* AthletView */ = {
 			isa = PBXGroup;
 			children = (
-				98EDA6922D42CA28002D3620 /* AthletView.swift */,
 				98993D352D4EC80900B56D17 /* AthleteImageView.swift */,
 			);
 			path = AthletView;
@@ -312,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98EDA6852D42AE2E002D3620 /* Training.swift in Sources */,
+				98419F8F2D4F949B00B4560B /* TrailStatusView.swift in Sources */,
 				98AD01D02D41777900F65B2E /* Athlete.swift in Sources */,
 				98EDA6902D42BA02002D3620 /* SeasonTrailView.swift in Sources */,
 				98AD01C22D41761A00F65B2E /* Persistence.swift in Sources */,

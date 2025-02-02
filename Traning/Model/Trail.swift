@@ -27,11 +27,11 @@ enum TrailDistance {
 	var description: String {
 		switch self {
 		case .short:
-			"короткая"
+			"КОРОТКАЯ"
 		case .medium:
-			"средняя"
+			"СРЕДНЯЯ"
 		case .long:
-			"длинная"
+			"ДЛИННАЯ"
 		}
 	}
 }
@@ -44,11 +44,11 @@ enum TrailHeight {
 	var description: String {
 		switch self {
 		case .low:
-			"высокогорье"
+			"НИЗКОГОРЬЕ"
 		case .medium:
-			"среднегорье"
+			"СРЕДНЕГОРЬЕ"
 		case .high:
-			"низкогорье"
+			"ВЫСОКОГОРЬЕ"
 		}
 	}
 }
