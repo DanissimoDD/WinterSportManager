@@ -96,13 +96,13 @@ enum TrailCases: CaseIterable {
 				distance: .medium,
 				height: .low,
 				route: [
-					RoutePart(type: .flat, distance: 110),
-					RoutePart(type: .ascent(scale: 1.2), distance: 85), // 1950
-					RoutePart(type: .descent(scale: 1.1), distance: 55), // 2500
-					RoutePart(type: .ascent(scale: 1.5), distance: 50), // 3000
-					RoutePart(type: .flat, distance: 100), // 4000
-					RoutePart(type: .descent(scale: 1.2), distance: 80), // 4800
-					RoutePart(type: .flat, distance: 110) // 5900
+					RoutePart(type: .flat, distance: 1200),
+					RoutePart(type: .ascent(scale: 1.2), distance: 850), // 1950
+					RoutePart(type: .descent(scale: 1.1), distance: 550), // 2500
+					RoutePart(type: .ascent(scale: 1.3), distance: 500), // 3000
+					RoutePart(type: .flat, distance: 1000), // 4000
+					RoutePart(type: .descent(scale: 1.2), distance: 800), // 4800
+					RoutePart(type: .flat, distance: 1100) // 5900
 				]
 			)
 		case .Croatia:

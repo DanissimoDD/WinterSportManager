@@ -24,9 +24,9 @@ struct RaceTimeView: View {
 	private func stringTime() -> String {
 		switch type {
 		case .idle:
-			TimeFormatter.formatToString(time)
+			TimeFormatter.formatToFullString(time)
 		case .gap:
-			"+" + TimeFormatter.formatToString(time)
+			TimeFormatter.formatToString(time)
 		}
 	}
 }

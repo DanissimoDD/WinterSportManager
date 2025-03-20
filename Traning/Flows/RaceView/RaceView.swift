@@ -51,8 +51,11 @@ struct RaceView: View {
 				}
 				.padding(16)
 				List {
-					ForEach(viewModel.presentedAthlets) { athleteTiming in
-						AthleteRaceRow(bestTiming: viewModel.bestTimeInRoute(), athleteTiming: athleteTiming)
+					ForEach(
+						Array(viewModel.presentedAthlets.enumerated()),
+						id: \.element.id
+					) { index, athleteTiming in
+						AthleteRaceRow(bestTiming: viewModel.bestTimeInRoute(), athleteTiming: athleteTiming, standing: index + 1)
 							.listRowSeparator(.hidden)
 							.listRowBackground(Color.clear)
 					}

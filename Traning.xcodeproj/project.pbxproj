@@ -11,6 +11,7 @@
 		9817ACD12D858D0A00E883AA /* TrailDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9817ACD02D858D0A00E883AA /* TrailDetailViewModel.swift */; };
 		9817ACD32D89F19700E883AA /* AthletsStandings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9817ACD22D89F19700E883AA /* AthletsStandings.swift */; };
 		9817ACD52D89FEC700E883AA /* SkiSliding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9817ACD42D89FEC700E883AA /* SkiSliding.swift */; };
+		9817ACD72D8C9C2200E883AA /* StandingNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9817ACD62D8C9C2200E883AA /* StandingNumberView.swift */; };
 		98419F8F2D4F949B00B4560B /* TrailStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98419F8E2D4F949B00B4560B /* TrailStatusView.swift */; };
 		98419F922D58F51900B4560B /* RaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98419F912D58F51900B4560B /* RaceView.swift */; };
 		98419F942D67B9BF00B4560B /* Athlete+Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98419F932D67B9BF00B4560B /* Athlete+Race.swift */; };
@@ -53,6 +54,7 @@
 		9817ACD02D858D0A00E883AA /* TrailDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailDetailViewModel.swift; sourceTree = "<group>"; };
 		9817ACD22D89F19700E883AA /* AthletsStandings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthletsStandings.swift; sourceTree = "<group>"; };
 		9817ACD42D89FEC700E883AA /* SkiSliding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiSliding.swift; sourceTree = "<group>"; };
+		9817ACD62D8C9C2200E883AA /* StandingNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingNumberView.swift; sourceTree = "<group>"; };
 		98419F8E2D4F949B00B4560B /* TrailStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailStatusView.swift; sourceTree = "<group>"; };
 		98419F912D58F51900B4560B /* RaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceView.swift; sourceTree = "<group>"; };
 		98419F932D67B9BF00B4560B /* Athlete+Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Athlete+Race.swift"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				98C5B8CA2D48218F0007E4A2 /* RectangleStatView.swift */,
 				98C48CA52D46D3DA0090F753 /* StatStack.swift */,
 				98999A0D2D7F61700068F008 /* RaceTimeView.swift */,
+				9817ACD62D8C9C2200E883AA /* StandingNumberView.swift */,
 				9817ACD22D89F19700E883AA /* AthletsStandings.swift */,
 				98999A092D7A171D0068F008 /* AthleteRaceRow.swift */,
 				98EDA6922D42CA28002D3620 /* AthleteBioRow.swift */,
@@ -383,6 +386,7 @@
 				986448EE2D44E75200BE9CA3 /* MainView.swift in Sources */,
 				9807F8CD2D4BF8B900FF5C94 /* DataStorageManager.swift in Sources */,
 				9817ACD32D89F19700E883AA /* AthletsStandings.swift in Sources */,
+				9817ACD72D8C9C2200E883AA /* StandingNumberView.swift in Sources */,
 				9817ACD12D858D0A00E883AA /* TrailDetailViewModel.swift in Sources */,
 				98C48CA12D454B830090F753 /* Nationalities.swift in Sources */,
 				98999A0A2D7A171D0068F008 /* AthleteRaceRow.swift in Sources */,

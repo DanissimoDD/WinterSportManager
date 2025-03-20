@@ -60,6 +60,7 @@ struct TrailDetailsView: View {
 			}
 			.padding(.zero)
 		}
+		.padding(8)
 		.toolbarBackground(.teal.opacity(0.3), for: .navigationBar)
 		.toolbarBackground(.visible, for: .navigationBar)
 	}
