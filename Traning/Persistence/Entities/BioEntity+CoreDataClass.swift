@@ -24,3 +24,16 @@ public class BioEntity: NSManagedObject, Identifiable {
 	@NSManaged public var atlethe: AthleteEntity?
 
 }
+
+// MARK: - Init
+
+extension BioEntity {
+	convenience init(model: Bio, context: NSManagedObjectContext) {
+		self.init(context: context)
+		self.id = model.id
+		self.age = Int16(model.age)
+		self.name = model.name
+		self.sourname = model.sourname
+		self.nationality = model.nationality.rawValue
+	}
+}

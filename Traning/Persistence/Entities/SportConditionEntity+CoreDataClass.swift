@@ -23,3 +23,15 @@ public class SportConditionEntity: NSManagedObject, Identifiable {
 	@NSManaged public var athlete: AthleteEntity?
 
 }
+
+// MARK: - Init
+
+extension SportConditionEntity {
+	convenience init(model: SportCondition, context: NSManagedObjectContext) {
+		self.init(context: context)
+		self.physical = model.physical
+		self.breath = model.breath
+		self.mental = model.mental
+		self.health = model.health
+	}
+}

@@ -8,19 +8,34 @@ import SwiftUI
 
 struct TrailDetailsView: View {
 	
+	private let dataManager: DataStorageManager
+	
 	@ObservedObject var viewModel: TrailDetailViewModel
 	@Binding var navigationPath: NavigationPath
 	
 	init(
-		trail: Trail,
+		trail: Binding<Trail>,
+		raceTrailId: UUID?,
 		athlets: [Athlete],
+		dataManager: DataStorageManager,
 		navigationPath: Binding<NavigationPath>
 	) {
-		self.viewModel = TrailDetailViewModel(trail: trail, athlets: athlets)
+		self.viewModel = TrailDetailViewModel(trail: trail, raceTrailId: raceTrailId, athlets: athlets)
+		self.dataManager = dataManager
 		_navigationPath = Binding(projectedValue: navigationPath)
 	}
 
 	var body: some View {
+		if viewModel.trail.hasPassed {
+			onHasPassed
+		} else if viewModel.isTrailOnRace {
+			onRace
+		} else {
+			onNotYetTime
+		}
+	}
+	
+	var onRace: some View {
 		VStack(alignment: .leading) {
 			trailDetails
 			AthletsStandings(athlets: viewModel.athlets)
@@ -43,6 +58,28 @@ struct TrailDetailsView: View {
 			UINavigationBar.appearance().scrollEdgeAppearance = appearance
 		}
 	}
+	
+	var onHasPassed: some View {
+		VStack {
+			Text("Race has been passed!")
+			Button(action: {
+				navigationPath.removeLast()
+			}) {
+				Text("Go back!")
+			}
+		}
+	}
+	
+	var onNotYetTime: some View {
+		VStack {
+			Text("Not time for this race!")
+			Button(action: {
+				navigationPath.removeLast()
+			}) {
+				Text("Go back!")
+			}
+		}
+	}
 
 	var trailDetails: some View {
 		HStack(alignment: .top) {
@@ -52,10 +89,10 @@ struct TrailDetailsView: View {
 				.clipShape(.rect(cornerSize: CGSize(width: 12, height: 12)))
 
 			VStack(alignment: .leading) {
-				TrailStatusView(image: Image(systemName: "point.topleft.down.to.point.bottomright.curvepath"), color: statusColor.0, text: viewModel.trail.distance.description)
+				TrailStatusView(image: Image(systemName: "point.topleft.down.to.point.bottomright.curvepath"), color: statusColor.0, text: "LENGTH")
 					.frame(height: 64)
 
-				TrailStatusView(image: Image(systemName: "mountain.2.fill"), color: statusColor.1, text: viewModel.trail.height.description)
+				TrailStatusView(image: Image(systemName: "mountain.2.fill"), color: statusColor.1, text: "HEIGHT")
 					.frame(height: 64)
 			}
 			.padding(.zero)
@@ -69,8 +106,9 @@ struct TrailDetailsView: View {
 		Button(action: {
 			navigationPath.append(
 				RaceView(
-					trail: viewModel.trail,
+					trail: viewModel.$trail,
 					athlets: viewModel.athlets,
+					dataManager: dataManager,
 					navigationPath: $navigationPath
 				)
 			)
@@ -107,28 +145,8 @@ struct TrailDetailsView: View {
 }
 
 extension TrailDetailsView {
+	// TODO: - Сделать норм
 	private var statusColor: (Color, Color) {
-		let distanceColor: Color
-		let heightColor: Color
-
-		switch viewModel.trail.distance {
-		case .short:
-			distanceColor = .green
-		case .medium:
-			distanceColor = .blue
-		case .long:
-			distanceColor = .yellow
-		}
-
-		switch viewModel.trail.height {
-		case .low:
-			heightColor = .green
-		case .medium:
-			heightColor = .blue
-		case .high:
-			heightColor = .yellow
-		}
-
-		return (distanceColor, heightColor)
+		(.blue, .green)
 	}
 }

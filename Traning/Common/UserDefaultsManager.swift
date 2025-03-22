@@ -14,7 +14,7 @@ final class UserDefaultsManager {
 	private let athletesCreatedKey = "athletesCreated"
 	
 	// Проверка, были ли атлеты созданы
-	var areAthletesCreated: Bool {
+	var areInitialDataCreated: Bool {
 		get {
 			return userDefaults.bool(forKey: athletesCreatedKey)
 		}

@@ -30,22 +30,18 @@ final class DataStorageManager: ObservableObject {
 	
 	lazy var backgroundContext = container.newBackgroundContext()
 	
-	// MARK: - Save
+	// MARK: - CRUD Athlete
 	
 	func saveAthlete(_ athlete: Athlete) throws {
-		let athleteEntity = AthleteEntity(model: athlete, context: context)
+		AthleteEntity(model: athlete, context: context)
 		try context.save()
 	}
 	
-	// MARK: - Fetch
-	
-	func fetchAthletes() throws -> [Athlete] {
+	func fetchAllAthletes() throws -> [Athlete] {
 		let request: NSFetchRequest<AthleteEntity> = AthleteEntity.fetchRequest()
 		let entities = try context.fetch(request)
 		return entities.map { Athlete(entity: $0) }
 	}
-	
-	// MARK: - Update
 	
 	func updateAthlete(_ athlete: Athlete) throws {
 		guard let athleteEntity = try fetchAthleteEntity(by: athlete.id) else {
@@ -61,8 +57,6 @@ final class DataStorageManager: ObservableObject {
 		try context.save()
 	}
 	
-	// MARK: - Delete
-	
 	func deleteAthlete(by id: UUID) throws {
 		guard let athleteEntity = try fetchAthleteEntity(by: id) else {
 			throw NSError(domain: "DataManager", code: 404, userInfo: [NSLocalizedDescriptionKey: "Athlete not found"])
@@ -72,7 +66,45 @@ final class DataStorageManager: ObservableObject {
 		try context.save()
 	}
 	
+	// MARK: - CRUD Trail
+	
+	func saveTrail(_ trail: Trail) throws {
+		TrailEntity(model: trail, context: context)
+		try context.save()
+	}
+	
+	func fetchAllTrails() throws -> [Trail] {
+		let request: NSFetchRequest<TrailEntity> = TrailEntity.fetchRequest()
+		let entities = try context.fetch(request)
+		return entities.map { Trail(entity: $0) }
+	}
+	
+	func updateTrail(_ trail: Trail) throws {
+		guard let trailEntity = try fetchTrailEntity(by: trail.id) else {
+			throw NSError(domain: "DataManager", code: 404, userInfo: [NSLocalizedDescriptionKey: "Trail not found"])
+		}
+		
+		trailEntity.hasPassed = trail.hasPassed
+		
+		try context.save()
+	}
+	
+	func deleteTrail(by id: UUID) throws {
+		guard let trailEntity = try fetchTrailEntity(by: id) else {
+			throw NSError(domain: "DataManager", code: 404, userInfo: [NSLocalizedDescriptionKey: "Athlete not found"])
+		}
+		
+		context.delete(trailEntity)
+		try context.save()
+	}
+	
 	// MARK: - Private Helpers
+	
+	private func fetchTrailEntity(by id: UUID) throws -> TrailEntity? {
+		let request: NSFetchRequest<TrailEntity> = TrailEntity.fetchRequest()
+		request.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+		return try context.fetch(request).first
+	}
 	
 	private func fetchAthleteEntity(by id: UUID) throws -> AthleteEntity? {
 		let request: NSFetchRequest<AthleteEntity> = AthleteEntity.fetchRequest()
@@ -83,8 +115,8 @@ final class DataStorageManager: ObservableObject {
 
 extension DataStorageManager {
 	// Метод для создания атлетов, если они еще не созданы
-	func createInitialAthletesIfNeeded() {
-		guard !userDefaultsManager.areAthletesCreated else {
+	func createInitialDataIfNeeded() {
+		guard !userDefaultsManager.areInitialDataCreated else {
 			return // Атлеты уже созданы
 		}
 		
@@ -106,100 +138,19 @@ extension DataStorageManager {
 			Athlete("Dzhanik", "Fayziev", nation: .Uzbekistan)
 		]
 		
+		let trails: [Trail] = TrailCases.allCases.map { $0.details }
 		do {
 			for athlete in athletes {
 				try saveAthlete(athlete)
 			}
-			userDefaultsManager.areAthletesCreated = true // Устанавливаем флаг
-			print("Athletes created successfully.")
+			for trail in trails {
+				try saveTrail(trail)
+			}
+			userDefaultsManager.areInitialDataCreated = true // Устанавливаем флаг
+			
+			debugPrint("Athletes created successfully.")
 		} catch {
-			print("Failed to create athletes: \(error)")
+			debugPrint("Failed to create athletes: \(error)")
 		}
-	}
-}
-
-extension AthleteEntity {
-	convenience init(model: Athlete, context: NSManagedObjectContext) {
-		self.init(context: context)
-		self.id = model.id
-		self.overall = model.overall
-		self.bio = BioEntity(model: model.bio, context: context)
-		self.condition = SportConditionEntity(model: model.condition, context: context)
-		self.naturalAbil = NaturalAbilitiesEntity(model: model.naturalAbilities, context: context)
-		self.acquredAbil = AcquredAbilitiesEntity(model: model.acquiredAbilities, context: context)
-	}
-}
-
-extension BioEntity {
-	convenience init(model: Bio, context: NSManagedObjectContext) {
-		self.init(context: context)
-		self.id = model.id
-		self.age = Int16(model.age)
-		self.name = model.name
-		self.sourname = model.sourname
-		self.nationality = model.nationality.rawValue
-	}
-}
-
-extension SportConditionEntity {
-	convenience init(model: SportCondition, context: NSManagedObjectContext) {
-		self.init(context: context)
-		self.physical = model.physical
-		self.breath = model.breath
-		self.mental = model.mental
-		self.health = model.health
-	}
-}
-
-extension NaturalAbilitiesEntity {
-	convenience init(model: NaturalAbilities, context: NSManagedObjectContext) {
-		self.init(context: context)
-		self.talent = model.talent
-		self.hardWork = model.hardWork
-	}
-}
-
-extension AcquredAbilitiesEntity {
-	convenience init(model: AcquiredAbilities, context: NSManagedObjectContext) {
-		self.init(context: context)
-		self.technik = model.technik
-		self.stamina = model.stamina
-		self.strength = model.strength
-		self.experience = model.experience
-	}
-}
-
-extension Bio {
-	init(entity: BioEntity) {
-		self.id = entity.id ?? UUID()
-		self.age = Int(entity.age)
-		self.name = entity.name ?? ""
-		self.sourname = entity.sourname ?? ""
-		self.nationality = Nationalities(rawValue: entity.nationality ?? "") ?? .unknown
-	}
-}
-
-extension SportCondition {
-	init(entity: SportConditionEntity) {
-		self.physical = entity.physical
-		self.breath = entity.breath
-		self.mental = entity.mental
-		self.health = entity.health
-	}
-}
-
-extension NaturalAbilities {
-	init(entity: NaturalAbilitiesEntity) {
-		self.talent = entity.talent
-		self.hardWork = entity.hardWork
-	}
-}
-
-extension AcquiredAbilities {
-	init(entity: AcquredAbilitiesEntity) {
-		self.technik = entity.technik
-		self.strength = entity.strength
-		self.stamina = entity.stamina
-		self.experience = entity.experience
 	}
 }

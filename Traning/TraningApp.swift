@@ -15,7 +15,7 @@ struct TraningApp: App {
 
  init() {
 	 self.dataManager = DataStorageManager(defaults: userDefaultsManager)
-	 self.dataManager.createInitialAthletesIfNeeded()
+	 self.dataManager.createInitialDataIfNeeded()
  }
 	
     var body: some Scene {

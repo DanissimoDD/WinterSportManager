@@ -12,8 +12,17 @@ struct RaceView: View {
 	@Binding var navigationPath: NavigationPath
 	@State private var showGoBackButton = false // Состояние для анимации
 
-	init(trail: Trail, athlets: [Athlete], navigationPath: Binding<NavigationPath>) {
-		viewModel = RaceViewModel(trail: trail, athlets: athlets)
+	init(
+		trail: Binding<Trail>,
+		athlets: [Athlete],
+		dataManager: DataStorageManager,
+		navigationPath: Binding<NavigationPath>
+	) {
+		viewModel = RaceViewModel(
+			trail: trail,
+			athlets: athlets,
+			dataManager: dataManager
+		)
 		_navigationPath = Binding(projectedValue: navigationPath)
 	}
 
@@ -99,7 +108,6 @@ struct RaceView: View {
 					.padding(.horizontal, 20)
 				}
 				.onAppear {
-					// Запуск анимации при появлении экрана
 					withAnimation(.easeInOut(duration: 0.8)) {
 						showGoBackButton = true
 					}
