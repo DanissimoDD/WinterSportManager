@@ -21,3 +21,13 @@ public class NaturalAbilitiesEntity: NSManagedObject, Identifiable {
 	@NSManaged public var athlete: AthleteEntity?
 
 }
+
+// MARK: - Init
+
+extension NaturalAbilitiesEntity {
+	convenience init(model: NaturalAbilities, context: NSManagedObjectContext) {
+		self.init(context: context)
+		self.talent = model.talent
+		self.hardWork = model.hardWork
+	}
+}

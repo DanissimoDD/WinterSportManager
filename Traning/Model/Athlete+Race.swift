@@ -6,18 +6,19 @@
 //
 
 import Foundation
+import SwiftUI
 
 final class Race: Hashable {
 	// MARK: - Properties
 	
-	var trail: Trail
+	@Binding var trail: Trail
 	
 	var athletsOnRoutes: [UUID : [AthleteTiming]] // Это по сути могли быть модели
 	
 	// MARK: - Init
 	
-	init(trail: Trail) {
-		self.trail = trail
+	init(trail: Binding<Trail>) {
+		self._trail = trail
 		var athletsOnRoutes = [UUID : [AthleteTiming]]()
 		trail.route.forEach {
 			athletsOnRoutes[$0.id] = []

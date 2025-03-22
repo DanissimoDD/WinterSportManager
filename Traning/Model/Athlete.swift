@@ -52,13 +52,6 @@ final class Athlete: Identifiable {
 			acquiredAbilities.stamina,
 		].reduce(0.0) { $0 + $1/3.5 }
 	}
-	
-	func racePerformance(in trail: Trail) -> AthletePerformance {
-		let physic = acquiredAbilities.strength * condition.physical / trail.distance.efficiency
-		let technik = acquiredAbilities.technik * condition.breath / trail.height.efficiency
-		let overall = physic * condition.health + technik + Double.random(in: -0.1...0.1)
-		return AthletePerformance(id: id, performance: overall)
-	}
 }
 
 extension Athlete: Hashable {
@@ -83,6 +76,13 @@ struct SportCondition: Hashable {
 		self.mental = Double.random(in: 0.7..<1)
 		self.health = Double.random(in: 0.8..<1)
 	}
+	
+	 init(entity: SportConditionEntity) {
+		 self.physical = entity.physical
+		 self.breath = entity.breath
+		 self.mental = entity.mental
+		 self.health = entity.health
+	 }
 }
 
 struct NaturalAbilities: Hashable {
@@ -95,6 +95,11 @@ struct NaturalAbilities: Hashable {
 		self.hardWork = Double.random(in: 0..<1)
 //		self.steadfastness = Double.random(in: 0..<1)
 	}
+
+	init(entity: NaturalAbilitiesEntity) {
+		 self.talent = entity.talent
+		 self.hardWork = entity.hardWork
+	 }
 }
 
 struct AcquiredAbilities: Hashable {
@@ -138,6 +143,13 @@ struct AcquiredAbilities: Hashable {
 		}
 		self.experience = Double.random(in: stats.min...stats.max)
 	}
+	
+	init(entity: AcquredAbilitiesEntity) {
+		 self.technik = entity.technik
+		 self.strength = entity.strength
+		 self.stamina = entity.stamina
+		 self.experience = entity.experience
+	 }
 }
 
 struct Bio: Identifiable, Hashable {
@@ -146,6 +158,28 @@ struct Bio: Identifiable, Hashable {
 	let name: String
 	let sourname: String
 	let nationality: Nationalities
+	
+	init(
+		id: UUID = UUID(),
+		age: Int,
+		name: String,
+		sourname: String,
+		nationality: Nationalities
+	) {
+		self.id = id
+		self.age = age
+		self.name = name
+		self.sourname = sourname
+		self.nationality = nationality
+	}
+	
+	init(entity: BioEntity) {
+		self.id = entity.id ?? UUID()
+		self.age = Int(entity.age)
+		self.name = entity.name ?? ""
+		self.sourname = entity.sourname ?? ""
+		self.nationality = Nationalities(rawValue: entity.nationality ?? "") ?? .unknown
+	}
 }
 
 struct AthletePerformance {

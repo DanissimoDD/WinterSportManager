@@ -9,22 +9,19 @@ import Foundation
 import SwiftUI
 
 final class TrailDetailViewModel: ObservableObject {
-	@Published var trail: Trail
+	@Binding var trail: Trail
 	@Published var athlets: [Athlete]
-	@Published var results: [AthletePerformance]
 	@Published var isPressed: Bool
 	
 	// MARK: - Init
 	
 	init(
-		trail: Trail,
+		trail: Binding<Trail>,
 		athlets: [Athlete],
-		results: [AthletePerformance] = [],
 		isPressed: Bool = false
 	) {
-		self.trail = trail
+		self._trail = trail
 		self.athlets = athlets
-		self.results = results
 		self.isPressed = isPressed
 	}
 }

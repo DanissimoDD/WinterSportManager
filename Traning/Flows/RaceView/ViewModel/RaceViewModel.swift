@@ -8,6 +8,8 @@ import Foundation
 import SwiftUI
 
 final class RaceViewModel: ObservableObject {
+	
+	private let dataManager: DataStorageManager
 
 	@Published var routeSelected: UUID {
 		didSet {
@@ -21,15 +23,20 @@ final class RaceViewModel: ObservableObject {
 	
 	@Published var currentRaceTime: TimeInterval = 0.0
 	
-	@Published var isFinished = false
+	@Published var isFinished = false {
+		didSet {
+			finishRace()
+		}
+	}
 	
 	var athlets: [Athlete]
 
 	private var timerTask: Task<Void, Never>?
 	private var isTimerRunning = false
 
-	init(trail: Trail, athlets: [Athlete]) {
+	init(trail: Binding<Trail>, athlets: [Athlete], dataManager: DataStorageManager) {
 		let race = Race(trail: trail)
+		self.dataManager = dataManager
 		self.race = race
 		self.athlets = athlets.map {
 			let athlete = $0
@@ -66,7 +73,16 @@ final class RaceViewModel: ObservableObject {
 	func bestTimeInRoute() -> TimeInterval {
 		presentedAthlets[0].time
 	}
-
+	
+	private func finishRace() {
+		race.trail.phase = .finished
+		do {
+			try dataManager.updateTrail(race.trail)
+		} catch {
+			debugPrint("Error while trail updates")
+		}
+	}
+	
 	private func fireTimer() async {
 		guard let lastRouteId = race.trail.route.last?.id, athlets.count != race.athletsOnRoutes[lastRouteId]?.count else {
 			await MainActor.run {

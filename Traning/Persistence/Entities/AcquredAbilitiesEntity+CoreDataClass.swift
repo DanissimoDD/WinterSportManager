@@ -23,3 +23,15 @@ public class AcquredAbilitiesEntity: NSManagedObject, Identifiable {
 	@NSManaged public var athlete: AthleteEntity?
 
 }
+
+// MARK: - Init
+
+extension AcquredAbilitiesEntity {
+	convenience init(model: AcquiredAbilities, context: NSManagedObjectContext) {
+		self.init(context: context)
+		self.technik = model.technik
+		self.stamina = model.stamina
+		self.strength = model.strength
+		self.experience = model.experience
+	}
+}

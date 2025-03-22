@@ -24,3 +24,17 @@ public class AthleteEntity: NSManagedObject, Identifiable {
 	@NSManaged public var acquredAbil: AcquredAbilitiesEntity?
 
 }
+
+// MARK: - Init
+
+extension AthleteEntity {
+	convenience init(model: Athlete, context: NSManagedObjectContext) {
+		self.init(context: context)
+		self.id = model.id
+		self.overall = model.overall
+		self.bio = BioEntity(model: model.bio, context: context)
+		self.condition = SportConditionEntity(model: model.condition, context: context)
+		self.naturalAbil = NaturalAbilitiesEntity(model: model.naturalAbilities, context: context)
+		self.acquredAbil = AcquredAbilitiesEntity(model: model.acquiredAbilities, context: context)
+	}
+}

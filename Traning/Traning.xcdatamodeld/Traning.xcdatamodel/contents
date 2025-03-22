@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23H420" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="AcquredAbilitiesEntity" representedClassName="AcquredAbilitiesEntity" syncable="YES">
         <attribute name="experience" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="stamina" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -28,6 +28,13 @@
         <attribute name="talent" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="athlete" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AthleteEntity" inverseName="naturalAbil" inverseEntity="AthleteEntity"/>
     </entity>
+    <entity name="RouteEntity" representedClassName="RouteEntity" syncable="YES">
+        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="typeValue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="trail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TrailEntity" inverseName="route" inverseEntity="TrailEntity"/>
+    </entity>
     <entity name="SportConditionEntity" representedClassName="SportConditionEntity" syncable="YES">
         <attribute name="breath" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="health" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -35,6 +42,11 @@
         <attribute name="physical" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="athlete" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AthleteEntity" inverseName="condition" inverseEntity="AthleteEntity"/>
     </entity>
-    <entity name="TrailEntity" representedClassName="TrailEntity" syncable="YES" codeGenerationType="class"/>
+    <entity name="TrailEntity" representedClassName="TrailEntity" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="phase" optional="YES" attributeType="String"/>
+        <relationship name="route" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RouteEntity" inverseName="trail" inverseEntity="RouteEntity"/>
+    </entity>
     <entity name="TrainingEntity" representedClassName="TrainingEntity" syncable="YES" codeGenerationType="class"/>
 </model>

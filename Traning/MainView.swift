@@ -10,19 +10,39 @@ import SwiftUI
 struct MainView: View {
 	@EnvironmentObject private var dataManager: DataStorageManager
 	@State private var athletes: [Athlete] = []
+	@State private var trails: [Trail] = []
 	
-	var body: some View {
-		SeasonView(trails: TrailCases.allCases.map { $0.details }, athlets: $athletes)
-			.onAppear {
-				loadAthletes()
-			}
+	init() {
+		printDatabasePath()
 	}
 	
-	private func loadAthletes() {
+	// TODO: - Подумать мб сразу передавать в SeasonView и делать стейтами
+	var body: some View {
+		SeasonView(dataManager: dataManager, athlets: $athletes, trails: $trails)
+	}
+
+	private func getApplicationSupportDirectory() -> URL? {
+		let fileManager = FileManager.default
 		do {
-			athletes = try dataManager.fetchAthletes()
+			// Получаем URL папки Application Support
+			let appSupportURL = try fileManager.url(
+				for: .applicationSupportDirectory,
+				in: .userDomainMask,
+				appropriateFor: nil,
+				create: true
+			)
+			return appSupportURL
 		} catch {
-			print("Failed to fetch athletes: \(error)")
+			debugPrint("Ошибка при получении пути к Application Support: \(error)")
+			return nil
+		}
+	}
+
+	private func printDatabasePath() {
+		if let appSupportURL = getApplicationSupportDirectory() {
+			debugPrint("Путь к базе данных: \(appSupportURL.path)")
+		} else {
+			debugPrint("Не удалось получить путь к базе данных.")
 		}
 	}
 }
