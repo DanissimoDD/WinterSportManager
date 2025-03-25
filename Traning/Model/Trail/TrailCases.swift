@@ -48,45 +48,73 @@ enum TrailCases: CaseIterable {
 			Trail(
 				name: "Norway",
 				route: [
-					RoutePart(type: .flat, distance: 0.7),
-					RoutePart(type: .ascent(scale: 1.5), distance: 0.3),
-					RoutePart(type: .flat, distance: 0.6),
-					RoutePart(type: .ascent(scale: 1.1), distance: 0.7),
-					RoutePart(type: .descent(scale: 1.6), distance: 0.4),
-					RoutePart(type: .flat, distance: 0.3)
+					RoutePart(type: .flat, distance: 700),
+					RoutePart(type: .ascent(scale: 1.5), distance: 300),
+					RoutePart(type: .flat, distance: 600),
+					RoutePart(type: .ascent(scale: 1.1), distance: 1000),
+					RoutePart(type: .descent(scale: 1.6), distance: 600),
+					RoutePart(type: .flat, distance: 300)
 				]
 			)
 		case .Italy:
 			Trail(
 				name: "Italy",
 				route: [
-					RoutePart(type: .flat, distance: 0.5),
-					RoutePart(type: .descent(scale: 1.2), distance: 0.4),
-					RoutePart(type: .ascent(scale: 1.3), distance: 0.3),
-					RoutePart(type: .flat, distance: 0.4),
-					RoutePart(type: .ascent(scale: 1.1), distance: 0.7),
-					RoutePart(type: .flat, distance: 0.3)
+					RoutePart(type: .flat, distance: 500),
+					RoutePart(type: .descent(scale: 1.2), distance: 900),
+					RoutePart(type: .ascent(scale: 1.3), distance: 500),
+					RoutePart(type: .flat, distance: 800),
+					RoutePart(type: .ascent(scale: 1.1), distance: 1200),
+					RoutePart(type: .flat, distance: 1000)
 				]
 			)
 		case .France:
 			Trail(
 				name: "France",
 				route: [
-					RoutePart(type: .flat, distance: 0.3),
-					RoutePart(type: .descent(scale: 1.3), distance: 0.8),
-					RoutePart(type: .ascent(scale: 1.1), distance: 0.6),
-					RoutePart(type: .flat, distance: 0.9),
-					RoutePart(type: .ascent(scale: 1.2), distance: 0.6),
-					RoutePart(type: .descent(scale: 1.1), distance: 0.8),
-					RoutePart(type: .flat, distance: 0.8)
+					RoutePart(type: .flat, distance: 500),
+					RoutePart(type: .descent(scale: 1.3), distance: 900),
+					RoutePart(type: .ascent(scale: 1.1), distance: 1000),
+					RoutePart(type: .flat, distance: 700),
+					RoutePart(type: .ascent(scale: 1.2), distance: 600),
+					RoutePart(type: .descent(scale: 1.1), distance: 800),
+					RoutePart(type: .flat, distance: 700)
 				]
 			)
 		case .Estonia:
-			Trail(name: "Estonia", route: [])
+			Trail(
+				name: "Estonia",
+				route: [
+					RoutePart(type: .flat, distance: 900),
+					RoutePart(type: .ascent(scale: 1.3), distance: 1800),
+					RoutePart(type: .descent(scale: 1.4), distance: 1500),
+					RoutePart(type: .flat, distance: 400)
+				]
+			)
 		case .Germany:
-			Trail(name: "Germany", route: [])
+			Trail(
+				name: "Germany",
+				route: [
+					RoutePart(type: .flat, distance: 1600),
+					RoutePart(type: .descent(scale: 1.4), distance: 500),
+					RoutePart(type: .flat, distance: 1400),
+					RoutePart(type: .ascent(scale: 1.2), distance: 900),
+					RoutePart(type: .descent(scale: 1.3), distance: 500),
+				]
+			)
 		case .Hungary:
-			Trail(name: "Hungary", route: [])
+			Trail(
+				name: "Hungary",
+				route: [
+					RoutePart(type: .flat, distance: 200),
+					RoutePart(type: .descent(scale: 1.1), distance: 700),
+					RoutePart(type: .flat, distance: 1200),
+					RoutePart(type: .ascent(scale: 1.6), distance: 300),
+					RoutePart(type: .flat, distance: 1300),
+					RoutePart(type: .ascent(scale: 1.2), distance: 1000),
+					RoutePart(type: .flat, distance: 400)
+				]
+			)
 		}
 	}
 }
