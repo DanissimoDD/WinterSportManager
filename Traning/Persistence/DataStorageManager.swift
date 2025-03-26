@@ -50,6 +50,7 @@ final class DataStorageManager: ObservableObject {
 		
 		athleteEntity.overall = athlete.overall
 		athleteEntity.bio = BioEntity(model: athlete.bio, context: context)
+		athleteEntity.seasonPoints = athlete.seasonPoints
 		athleteEntity.condition = SportConditionEntity(model: athlete.condition, context: context)
 		athleteEntity.naturalAbil = NaturalAbilitiesEntity(model: athlete.naturalAbilities, context: context)
 		athleteEntity.acquredAbil = AcquredAbilitiesEntity(model: athlete.acquiredAbilities, context: context)

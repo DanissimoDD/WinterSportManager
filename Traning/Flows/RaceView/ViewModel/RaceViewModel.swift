@@ -81,6 +81,15 @@ final class RaceViewModel: ObservableObject {
 		} catch {
 			debugPrint("Error while trail updates")
 		}
+		let racePoints = [15, 12, 10, 8, 7, 6, 5, 4, 3, 2, 1, 1]
+		racePoints.distributePoints(to: race.finishedAthlets)
+		athlets.forEach {
+			do {
+				try dataManager.updateAthlete($0)
+			} catch {
+				debugPrint("Error while trail updates")
+			}
+		}
 	}
 	
 	private func fireTimer() async {
@@ -118,5 +127,13 @@ extension RaceViewModel: Hashable {
 	func hash(into hasher: inout Hasher) {
 		hasher.combine(presentedAthlets)
 		hasher.combine(race)
+	}
+}
+
+extension Array where Element == Int {
+	func distributePoints(to athletes: [Athlete]) {
+		for (index, athlete) in athletes.enumerated() {
+			athlete.seasonPoints += indices.contains(index) ? self[index] : 0
+		}
 	}
 }

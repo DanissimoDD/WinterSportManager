@@ -15,6 +15,13 @@ final class Race: Hashable {
 	
 	var athletsOnRoutes: [UUID : [AthleteTiming]] // Это по сути могли быть модели
 	
+	var finishedAthlets: [Athlete] {
+		guard let array = athletsOnRoutes[lastRouteId] else { return [] }
+		return array.map { $0.athlete }
+	}
+	
+	private let lastRouteId: UUID
+	
 	// MARK: - Init
 	
 	init(trail: Binding<Trail>) {
@@ -23,6 +30,7 @@ final class Race: Hashable {
 		trail.route.forEach {
 			athletsOnRoutes[$0.id] = []
 		}
+		lastRouteId = trail.route.last?.id ?? UUID()
 		self.athletsOnRoutes = athletsOnRoutes
 	}
 	

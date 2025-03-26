@@ -10,6 +10,7 @@
     <entity name="AthleteEntity" representedClassName="AthleteEntity" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="overall" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="seasonPoints" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="acquredAbil" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AcquredAbilitiesEntity" inverseName="athlete" inverseEntity="AcquredAbilitiesEntity"/>
         <relationship name="bio" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BioEntity" inverseName="atlethe" inverseEntity="BioEntity"/>
         <relationship name="condition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SportConditionEntity" inverseName="athlete" inverseEntity="SportConditionEntity"/>

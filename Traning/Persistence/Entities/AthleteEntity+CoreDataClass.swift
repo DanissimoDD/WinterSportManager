@@ -18,6 +18,7 @@ public class AthleteEntity: NSManagedObject, Identifiable {
 
 	@NSManaged public var id: UUID?
 	@NSManaged public var overall: Double
+	@NSManaged public var seasonPoints: Int
 	@NSManaged public var bio: BioEntity?
 	@NSManaged public var condition: SportConditionEntity?
 	@NSManaged public var naturalAbil: NaturalAbilitiesEntity?
@@ -32,6 +33,7 @@ extension AthleteEntity {
 		self.init(context: context)
 		self.id = model.id
 		self.overall = model.overall
+		self.seasonPoints = model.seasonPoints
 		self.bio = BioEntity(model: model.bio, context: context)
 		self.condition = SportConditionEntity(model: model.condition, context: context)
 		self.naturalAbil = NaturalAbilitiesEntity(model: model.naturalAbilities, context: context)

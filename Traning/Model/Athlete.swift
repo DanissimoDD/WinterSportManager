@@ -15,13 +15,14 @@ final class Athlete: Identifiable {
 	var naturalAbilities: NaturalAbilities = NaturalAbilities()
 	var acquiredAbilities: AcquiredAbilities
 	
-	var seasonPoints = 0
+	var seasonPoints: Int = 0
 	var racePerformance: RacePerformance?
 	
 	
 	init(entity: AthleteEntity) {
 		self.id = entity.id ?? UUID()
 		self.overall = entity.overall
+		self.seasonPoints = entity.seasonPoints
 		self.bio = Bio(entity: entity.bio!)
 		self.condition = SportCondition(entity: entity.condition!)
 		self.naturalAbilities = NaturalAbilities(entity: entity.naturalAbil!)
@@ -180,9 +181,4 @@ struct Bio: Identifiable, Hashable {
 		self.sourname = entity.sourname ?? ""
 		self.nationality = Nationalities(rawValue: entity.nationality ?? "") ?? .unknown
 	}
-}
-
-struct AthletePerformance {
-	let id: UUID
-	let performance: Double
 }

@@ -22,8 +22,9 @@ struct AthletBiosView: View {
 						Text("Nationality: \(athlete.bio.nationality.rawValue)")
 						athlete.bio.nationality.flagImage.resizable().frame(width: 18, height: 18).cornerRadius(4)
 					}
-					ZStack {
+					HStack {
 						RectangleStatView(stat: athlete.overall)
+						Text(athlete.seasonPoints.formatted())
 					}
 				}
 			}
